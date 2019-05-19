@@ -1,51 +1,42 @@
-# FreightHub Frontend Coding Challenge
+# SMS Digital Coding Challenge 
 
-Welcome to the frontend coding challenge. Clone this repository and follow the instructions below.
+This is a coding challenge project created using  Angular 6+.
 
-Your goal is to set up an application, where the user is able to manage shipments.
+## Installation
 
-Business need
-===
+git clone https://github.com/sivasagi/freightHub_frontend_challenge
 
-The main goal is for the user to check the shipments at a glance. This allows users to take faster decisions and plan ahead of time.
+cd freightHub_frontend_challenge
 
-Providing information to the customer increases transparency and reduces communication issue.
 
-Use cases
-===
+## Install npm packages
 
-- The user shall be able to see shipments in pages of 20 elements per page.
-- The user shall be able to search for shipment id and sort by different fields.
-- The user shall be able to see the shipment information on a shipment details page
-- The user shall be able to update the shipment name
-
-The interactions should not refresh the page.
-
-Technology requirements
-===
-
-You can use any libraries, task runners and build processors. React and Javascript are the only requirements. ES6 and typescript are highly encouraged, as well as MST and MobX if needed.
-
-Server side
-===
-
-The boilerplate includes a small service for data fetching. `db.json` includes all the necessary data to achieve the goal. Please follow the steps below to start the server:
+Install the npm packages described in the package.json and verify that it works:
 
 ```
-yarn or npm install .
-yarn start or npm start
+npm install
 ```
 
-Please check [json-server](https://github.com/typicode/json-server) for more information.
+## Development server
 
-Deliveries
-===
+Run `npm run start:proxy` for a dev server and for a json-server to fetch data from db.json file. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-- Clone this repository.
-- Complete your project as described above within your local repository.
-- Ensure everything you want to commit is committed.
-- Create a git bundle: ```git bundle create your_name.bundle --all```
-- Email the bundle file to your point of contact.
+## Code scaffolding
 
-Good luck,
-The FreightHub Team
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
