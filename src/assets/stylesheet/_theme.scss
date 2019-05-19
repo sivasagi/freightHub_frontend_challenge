@@ -1,0 +1,20 @@
+@import '~@angular/material/theming';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '_variables.scss';
+
+$primary-theme: mat-palette($primary, 500, 300, 700);
+$accent-theme: mat-palette($accent);
+$secondary-theme: mat-palette($secondary);
+
+$theme: mat-light-theme(
+    $primary-theme,
+    $accent-theme,
+    $secondary-theme
+);
+
+$typography: mat-typography-config(
+    $font-family: 'Roboto'
+);
+
+@include angular-material-theme($theme);
+@include angular-material-typography($typography);

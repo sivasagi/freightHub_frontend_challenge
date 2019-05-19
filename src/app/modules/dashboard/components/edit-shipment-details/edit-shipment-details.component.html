@@ -1,0 +1,19 @@
+<span class="close-icon" fxLayoutAlign="end end">
+  <mat-icon (click)="closeDialog()">close</mat-icon>
+</span>
+<h1 mat-dialog-title fxLayoutAlign="center center">Edit Shipment {{data?.id}}</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="outline" fxFlex>
+    <mat-label>Shipment Name</mat-label>
+    <input matInput [(ngModel)]="shipmentName" required autocomplete="off"/>
+  </mat-form-field>
+</div>
+<mat-dialog-actions align="center">
+  <button mat-button color="secondary" mat-dialog-close [disabled]="loading">
+    CANCEL
+  </button>
+  <button mat-button color="primary" (click)="updateShipment($event)" [disabled]="!shipmentName" *ngIf="data">
+    UPDATE
+  </button>
+</mat-dialog-actions>
+  

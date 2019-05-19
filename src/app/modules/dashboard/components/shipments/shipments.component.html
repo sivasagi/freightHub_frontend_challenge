@@ -1,0 +1,113 @@
+<ng-container *ngIf="loading">
+  <div fxLayout="column" fxFill fxLayoutAlign="center center" class="loader-div">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-container>
+<ng-container *ngIf="!loading">
+  <div fxLayout="row" fxLayoutAlign="start center" class="filters-section">
+    <div fxFlex="10%"></div>
+    <div fxFlex="80%" fxLayout="row wrap" fxLayoutAlign="start center">
+      <span *ngIf="length">{{length}} Shipments</span>
+      <span fxFlex></span>
+      <mat-form-field appearance="outline">
+        <mat-label>Type to search</mat-label>
+        <input matInput (keyup)="applyFilter($event.target.value)" autocomplete="off" placeholder="Filter">
+      </mat-form-field>
+    </div>
+    <div fxFlex="10%"></div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" class="data-table">
+    <div fxFlex="10%"></div>
+    <div class="mat-elevation-z8" fxFlex="80%">
+      <table class="desktop-data-table" mat-table [dataSource]="dataSource" matSort>
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+    
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+    
+        <!-- Mode Column -->
+        <ng-container matColumnDef="mode">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Mode </th>
+          <td mat-cell *matCellDef="let element"> {{element.mode}} </td>
+        </ng-container>
+    
+        <!-- Type Column -->
+        <ng-container matColumnDef="type">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Type </th>
+          <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+        </ng-container>
+  
+        <!-- Origin Column -->
+        <ng-container matColumnDef="origin">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Origin </th>
+          <td mat-cell *matCellDef="let element"> {{element.origin}} </td>
+        </ng-container>
+
+        <!-- Destination Column -->
+        <ng-container matColumnDef="destination">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Destination </th>
+          <td mat-cell *matCellDef="let element"> {{element.destination}} </td>
+        </ng-container>
+  
+          <!-- Status Column -->
+        <ng-container matColumnDef="status">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Status </th>
+          <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row (click)="goToShipmentDetailsPage(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-table class="mobile-data-table" [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+          <mat-cell *matCellDef="let row" data-label="id"> {{row.id}} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+          <mat-cell *matCellDef="let row" data-label="name"> {{row.name}} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="mode">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Mode </mat-header-cell>
+          <mat-cell *matCellDef="let row" data-label="mode"> {{row.mode}} </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="type">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Type </mat-header-cell>
+          <mat-cell *matCellDef="let row" data-label="type"> {{row.type}} </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="origin">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Origin </mat-header-cell>
+          <mat-cell *matCellDef="let row" [style.origin]="row.origin" data-label="origin"> {{row.origin}} </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="destination">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Destination </mat-header-cell>
+          <mat-cell *matCellDef="let row" data-label="destination"> {{row.destination}} </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="status">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
+          <mat-cell *matCellDef="let row" data-label="status"> {{row.status}} </mat-cell>
+        </ng-container>
+  
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row (click)="goToShipmentDetailsPage(row)" *matRowDef="let row; columns: displayedColumns;">
+        </mat-row>
+      </mat-table>
+      <mat-paginator [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = $event" [length]="length" [pageSizeOptions]="[25, 50, 100]" showFirstLastButtons></mat-paginator>
+    </div>
+    <div fxFlex="10%"></div>
+  </div>
+</ng-container>

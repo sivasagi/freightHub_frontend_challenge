@@ -1,0 +1,23 @@
+@import "../../../../../assets/stylesheet/variables";
+
+:host {
+    display: block;
+    min-width: 400px;
+}
+.close-icon {
+    .mat-icon {
+        width: 16px;
+        height: 16px;
+        font-size: 16px;
+        cursor: pointer;
+        color: $secondary-color;
+    }
+}
+.mat-dialog-title, .mat-dialog-content {
+    color: $secondary-color;
+}
+@media screen and (max-width: 600px) {
+    :host {
+        min-width: 0px !important;
+    }
+}

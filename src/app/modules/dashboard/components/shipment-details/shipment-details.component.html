@@ -1,0 +1,101 @@
+<ng-container *ngIf="loading">
+  <div fxLayout="column" fxFill fxLayoutAlign="center center" class="loader-div">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-container>
+<ng-container *ngIf="!loading">
+  <div fxLayout="row" fxLayoutAlign="start center" class="shipment-details-section">
+    <div fxFlex="10%" fxHide.xs></div>
+    <div fxFlex="80%" fxFlex.xs="100%" fxLayout="row" fxLayoutAlign="start center">
+      <div class="shipment-details-section-container">
+        <a (click)="goToBackPage()" class="back-btn">
+          <mat-icon>keyboard_backspace</mat-icon>
+          <span>BACK</span>
+        </a>
+        <div class="meta-container">
+            <p class="header">
+              <span class="title">{{shipmentData?.id}}</span> 
+              <span class="dot"><span></span></span> 
+              <span class="status">
+                {{shipmentData?.status}}
+              </span>
+              <span class="dot"><span></span></span>
+              <span class="mode">
+                {{shipmentData?.mode}}
+              </span>
+              <span class="dot" fxShow fxHide.xs><span></span></span>
+              <span class="type" fxShow fxHide.xs>
+                {{shipmentData?.type}}
+              </span>
+            </p>
+            <p class="subheader">
+              {{shipmentData?.name}}
+            </p>
+            <p class="location-details">
+              <span class="origin">
+                <span class="item-title">Origin</span>: 
+                {{shipmentData?.origin}}
+              </span>
+              <span class="destination">
+                <span class="item-title">Destination</span>:  
+                {{shipmentData?.destination}}
+              </span>
+            </p>
+            <p>
+              <span>
+                <span class="item-title">UserId</span>: 
+                {{shipmentData?.userId}}
+              </span>
+            </p>
+            <p>
+              <span>
+                <span class="item-title">Total</span>: 
+                {{shipmentData?.total}}
+              </span>
+            </p>
+            <p fxHide fxShow.xs>
+              <span>
+                <span class="item-title">Type</span>: 
+                {{shipmentData?.type}}
+              </span>
+            </p>
+            <ng-container *ngIf="shipmentData?.cargo.length > 0">
+              <h4 class="cargo-details-header">Cargo Details :</h4>
+              <div class="cargo-details" *ngFor="let item of shipmentData?.cargo">
+                <p>
+                  <span class="item-title">Type</span>: 
+                  {{item?.type}}
+                </p>
+                <p>
+                  <span class="item-title">Description</span>: 
+                  {{item?.description}}
+                </p>
+                <p>
+                  <span class="item-title">Volume</span>: 
+                  {{item?.volume}}
+                </p>
+              </div>
+            </ng-container>
+            <ng-container *ngIf="shipmentData?.cargo.length > 0">
+              <h4 class="services-header">Type Of Services :</h4>
+              <div class="services" *ngFor="let item of shipmentData?.services">
+                <p>
+                  <span class="dot"><span></span></span>
+                  {{item?.type}}
+                </p>
+              </div>
+            </ng-container>
+        </div>
+        <button mat-icon-button class="more-btn" [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item class="edit-button" (click)="editShipment($event)">
+            <mat-icon>edit</mat-icon>Edit
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+    <div fxFlex="10%" fxHide.xs></div>
+  </div>
+</ng-container>

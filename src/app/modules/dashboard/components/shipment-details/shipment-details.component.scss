@@ -1,0 +1,113 @@
+@import "../../../../../assets/stylesheet/variables";
+.loader-div {
+    height: 100vh !important;
+    padding: 5rem;
+}
+.shipment-details-section {
+    margin-top: 100px;
+    color: $secondary-color;
+    .shipment-details-section-container {
+        position: relative;
+        padding: 1rem;
+        width: 100%;
+        .meta-container {
+            max-width: 600px;
+            margin: 0 auto;
+            .header {
+                margin: 12px 0px;
+                .title {
+                    font-size: 20px;
+                    font-weight: bold;
+                    margin-right: 50px;
+                }
+                .status, .mode, .type {
+                    margin-right: 20px;
+                }
+            }
+            .dot {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                span {
+                    height: 8px;
+                    width: 8px;
+                    background-color: $secondary-color;
+                    border-radius: 50%;
+                    margin: 0rem 0.5rem;
+                }
+            }
+            .subheader {
+                font-size: 14px;
+                margin: 12px 0px;
+            }
+            .location-details {
+                margin-top: 50px;
+                .origin, .destination {
+                    margin-right: 50px;
+                    max-width: 500px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    display: inline-block;
+                    white-space: nowrap;
+                }
+            }
+            .cargo-details-header {
+                margin-top: 50px;
+            }
+            .services-header {
+                margin-top: 50px;
+            }
+            .cargo-details, .services {
+                margin: 30px 0px 0px 30px;
+            }
+            .item-title{
+                font-weight: 500;
+            }
+        }
+        .back-btn, .more-btn {
+            cursor: pointer;
+            position: absolute;
+        }   
+        .back-btn {
+            top: 20px;
+            left: 0px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            margin: 0.5rem;
+            padding: 0.2rem;
+            mat-icon {
+                font-size: 18px;
+                height: 18px;
+                width: 24px;
+            }
+            span {
+                font-size: 12px;
+            }
+        }
+        .more-btn {
+            top: 24px;
+            right: 40px;
+        }     
+        .edit-button {
+            cursor: pointer;
+            font-size: 16px;
+            .mat-icon {
+                font-size: 22px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 960px) {
+    .meta-container {
+        margin-top: 70px !important;
+    }
+}
+@media screen and (max-width: 600px) {
+    .origin, .destination {
+        margin-right: 0px !important;
+    }
+}

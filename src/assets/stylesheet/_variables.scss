@@ -1,0 +1,117 @@
+//variables
+
+$primary: (
+    50 : #e5f8f9,
+    100 : #beecf0,
+    200 : #93e0e7,
+    300 : #68d4dd,
+    400 : #47cad5,
+    500 : #27c1ce,
+    600 : #23bbc9,
+    700 : #1db3c2,
+    800 : #17abbc,
+    900 : #0e9eb0,
+    A100 : #defbff,
+    A200 : #abf5ff,
+    A400 : #78eeff,
+    A700 : #5eebff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$accent: (
+    50 : #fef3e8,
+    100 : #fce0c5,
+    200 : #facb9f,
+    300 : #f8b679,
+    400 : #f7a75c,
+    500 : #f5973f,
+    600 : #f48f39,
+    700 : #f28431,
+    800 : #f07a29,
+    900 : #ee691b,
+    A100 : #ffffff,
+    A200 : #fff4ee,
+    A400 : #ffd2bb,
+    A700 : #ffc1a1,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$secondary: (
+    50 : #e5e8ea,
+    100 : #bec5cb,
+    200 : #929fa9,
+    300 : #667887,
+    400 : #465b6d,
+    500 : #253e53,
+    600 : #21384c,
+    700 : #1b3042,
+    800 : #162839,
+    900 : #0d1b29,
+    A100 : #68acff,
+    A200 : #3591ff,
+    A400 : #0275ff,
+    A700 : #0069e7,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+
+$primary-color: map-get($primary, 500 ); // #27c1ce;
+$accent-color: map-get($accent, 500 );//#f5973f;
+$secondary-color: map-get($secondary, 500 );//#253e53;
+$white: #ffffff;
+$error-message: #f44336;
+
+
+$font-family: 'Roboto';
+
+//breakpoint variables
+$extra-small: 'screen and (max-width: 599px)';
+$small: 'screen and (min-width: 600px) and (max-width: 959px)';
+$medium: 'screen and (min-width: 960px) and (max-width: 1279px)';
+$large: 'screen and (min-width: 1280px) and (max-width: 1919px)';
+$extra-large: 'screen and (min-width: 1920px) and (max-width: 5000px)';
