@@ -19,7 +19,7 @@ npm install
 
 ## Development server
 
-Run `npm run start:proxy` for a dev server and for a json-server to fetch data from db.json file. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm run start:proxy:mock:server` for a dev server and for a json-server to fetch data from db.json file. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
